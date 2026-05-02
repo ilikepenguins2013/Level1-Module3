@@ -1,7 +1,23 @@
 package _02_static_smiley_blues;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class SmileyBlues {
 	void start() {
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		Smiley thing1 = new Smiley();
+		Smiley thing2 = new Smiley();
+		Smiley thing3 = new Smiley();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel.add(thing1);
+		panel.add(thing2);
+		panel.add(thing3);
+		frame.add(panel);
+		frame.pack();
+		frame.setVisible(true);
+		
 		// 1. Make a new JFrame and set it to be visible
 
 		// 2. Set your frame's default close operation to JFrame.EXIT_ON_CLOSE
