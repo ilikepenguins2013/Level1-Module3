@@ -28,39 +28,40 @@ public class Frogger extends PApplet {
 
 	@Override
 	public void setup() {
+		back = loadImage("src/_06_frogger/froggerBackground.png");
+		back.resize(WIDTH, HEIGHT);
+		car1 = new Car(-80, 590, 80, 20, false);
+		//car2 = new Car(WIDTH, 500, 80, 27, true);
+		car2 = new Car(-80, 380, 80, 33, true);
+		car3 = new Car(WIDTH, 200, 80, 43, false);
 		
-		car1 = new Car(-80, 650, 80, 20, false);
-		car2 = new Car(WIDTH, 500, 80, 27, true);
-		car3 = new Car(-80, 350, 80, 33, false);
-		car4 = new Car(WIDTH, 200, 80, 43, true);
 		
 		
 		
-		
-		 carLeft = loadImage("src/_06_frogger/carLeft.png");
-	        carLeft.resize(80,50);
-	        carRight = loadImage("src/_06_frogger/carRight.png");
-	        carRight.resize(80,50);
+		carLeft = loadImage("src/_06_frogger/carLeft.png");
+	    carLeft.resize(80,50);
+	    carRight = loadImage("src/_06_frogger/carRight.png");
+	    carRight.resize(80,50);
 	}
 
 	@Override
 	public void draw() {
-		background(252, 129, 28);
+		background(back);
 		fill(Color.GREEN.getRGB());
 		noStroke();
 		ellipse(frogX, frogY, frogWidth, frogHeight);
-		if (intersects(car1) || intersects(car2) || intersects(car3) || intersects(car4)) {
+		if (intersects(car1) || intersects(car2) || intersects(car3)  /*intersects(car4)*/) {
 			frogX = 500;
 			frogY = 700;
 		}
 		car1.display();
 		car2.display();
 		car3.display();
-		car4.display();
+		//car4.display();
 		car1.moveCarLeft();
 		car2.moveCarRight();
 		car3.moveCarLeft();
-		car4.moveCarRight();
+		//car4.moveCarRight();
 		
 		
 	}
